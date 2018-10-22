@@ -11,6 +11,6 @@ Table = pd.read_csv('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.cs
 
 
 #grab the row that has the maximum water level and display the columns Date and Time, and Water Level
-Table.loc(['Water Level'.max()],['Date Time':'Water Level'])
+Table.loc[Table['Water Level'].max()],['Date Time':'Water Level'])
 
 print(Table.head)
