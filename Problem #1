@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+
+#open file
+fhand = open('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.csv')
+
+#assign variables
+highest_water_level = None
+
+#for loop line by line
+for line in fhand:
+        #line = line.rstrip()
+        #make a list out of the dataset so each column becomes a part of the list
+        columns = line.split(',')
+
+        try:
+           wl = float(columns[1]) #water level = convert turn the water level column [1] from string into float
+
+        except:
+           continue #account for header
+
+        if highest_water_level is None or wl > highest_water_level:
+                highest_water_level = wl
+                date = (columns[0])
+
+print ("Highest Water Level:", highest_water_level)
+print ("Date and Time:", date)
