@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-~/ufrc/zoo6927/share/Class_Files/data/
 
 import pandas as pd
 
@@ -9,8 +8,7 @@ Table = pd.read_csv('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.cs
 #calculate the maximum water level
 #df['Water Level'].max()
 
+#print(Table.loc[Table[' Water Level'].idxmax()]) #prints the whole table 
 
-#grab the row that has the maximum water level and display the columns Date and Time, and Water Level
-Table.loc[Table['Water Level'].max()],['Date Time':'Water Level'])
-
-print(Table.head)
+print(Table.loc[Table[' Water Level'].idxmax(),['Date Time',' Water Level']]) 
+#grab the row that has the maximum water level and display just the columns Date Time and Water Level
