@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+#open file and turn into a nifty table
+Table = pd.read_csv('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.csv')
+
