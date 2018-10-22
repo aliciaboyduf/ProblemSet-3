@@ -22,6 +22,8 @@ for line in fhand:
   if prevline is not 0 or wl - prevline > maxdiff:
     maxdiff = float(wl - prevline)
     date = (columns[0])
+  else:
+     continue
   prevline = wl
 
 print ("wl:",wl)
