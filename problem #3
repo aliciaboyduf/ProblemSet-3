@@ -1,0 +1,27 @@
+
+#!/usr/bin/env python3
+
+#open file
+fhand = open('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.cs$
+
+#assign variables
+Max_Diff = None
+
+#for loop line by line
+for line in fhand:
+        #line = line.rstrip()
+        #make a list out of the dataset so each column becomes a part of $
+        columns = line.split(',')
+
+        try:
+           wl = float(columns[1]) #water level = convert turn the water l$
+
+        except:
+           continue #account for header
+
+        if         
+                Max_Diff = wl
+                date = (columns[0])
+
+print ("Fastest Rise In Water Level:", max_diff)
+print ("Date and Time:", date)
