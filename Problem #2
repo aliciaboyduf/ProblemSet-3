@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+~/ufrc/zoo6927/share/Class_Files/data/
+
+import pandas as pd
+
+#open file and turn into a nifty table
+Table = pd.read_csv('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.csv')
+
+#calculate the maximum water level
+#df['Water Level'].max()
+
+
+#grab the row that has the maximum water level and display the columns Date and Time, and Water Level
+Table.loc(['Water Level'.max()],['Date Time':'Water Level'])
+
+print(Table.head)
