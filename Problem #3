@@ -14,17 +14,15 @@ for line in fhand:
   columns = line.split(',') #make a list out of the dataset so each column becomes a part of $
 
   try:
-    wl = float(columns[1])#water level = convert turn the water level into column
+    wl = float(columns[1]) #water level = convert turn the water level into column
 
   except:
     continue #account for header
 
-  if prevline is not 0 or wl - prevline > maxdiff:
-    maxdiff = float(wl - prevline)
+  if prevline is not 0 and wl - prevline > maxdiff: #accounts for lines without entries and first entry; waterlevel entry minus previous line
+    maxdiff = float(wl - prevline) #updates maxdiff value if waterlevel-previousline is greater than previous value
     date = (columns[0])
-  prevline = wl
+  prevline = wl #updates previous line each iteration
 
-print ("wl:",wl)
-print ("prevline:", prevline)
 print ("Fastest Rise In Water Level:", maxdiff)
 print ("Date and Time:", date)
