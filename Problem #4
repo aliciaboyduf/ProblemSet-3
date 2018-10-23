@@ -1,8 +1,28 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3 #if running script - also remember to include the full pathway in the file read command
+
+%matplotlib inline #Making Juypter happy to run matplotlib
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
 #open file and turn into a nifty table
-Table = pd.read_csv('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.csv')
+Table = pd.read_csv('CO-OPS__8729108__wl.csv') #download the raw data file into Jupyter
+
+wl = Table[' Water Level']
+time = Table['Date Time']
+
+plt.plot(time, wl, '-')
+plt.axis([0, 750, 0, 7])
+plt.xlabel('Time')
+plt.ylabel('Water Level')
+plt.title('Water Level in Panama City, Fl during Hurricane Michael')
+
+plt.tick_params(
+    axis='x',          # changes apply to the x-axis
+    which='both',      # both major and minor ticks are affected
+    bottom=False,      # ticks along the bottom edge are off
+    top=False,         # ticks along the top edge are off
+    labelbottom=False)
+
+plt.show()
 
